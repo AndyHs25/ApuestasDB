@@ -108,6 +108,7 @@
             mockMvc.perform(MockMvcRequestBuilders
                             .delete("/api/user/{id}", 1) // Asegúrate de usar un ID válido
                             .accept(MediaType.APPLICATION_JSON))
+                    .andDo(print())
                     .andExpect(status().isOk());
         }
 
